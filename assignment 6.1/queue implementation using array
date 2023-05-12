@@ -24,8 +24,8 @@ void dequeue(){
         front=rear=-1;
     }else{
         front++;
-    }
-}
+     }
+ }
 void display(){
     if(front==-1 and rear==-1){
         cout<<"queue is empty";
