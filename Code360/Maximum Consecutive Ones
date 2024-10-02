@@ -12,3 +12,4 @@ int consecutiveOnes(vector<int> &arr) {
     }
     return maxi;
 }
+
