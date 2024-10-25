@@ -1,0 +1,23 @@
+Node * insert(Node * head, int n, int pos, int val) {
+     Node* Node1 = new Node(val);
+     Node* temp = head;
+     int count = 0;
+
+     if(pos == 0){
+         Node1 -> next = head;
+         return Node1;
+     }
+
+
+     while(count < pos - 1 and temp != nullptr ){
+         temp = temp -> next;
+         count++;
+     }
+
+     if (temp != nullptr) {
+         Node1->next = temp->next;
+         temp->next = Node1;
+     }
+        return head;
+
+}
