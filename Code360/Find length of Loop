@@ -1,0 +1,32 @@
+int len( Node* slow, Node* fast){
+    
+    int len = 1;
+    fast = fast -> next;
+    
+    while ( slow != fast)
+    {
+        len++;
+        fast = fast -> next;
+    }
+
+    return len;
+
+}
+
+
+int lengthOfLoop(Node *head) {
+     Node* slow = head;
+     Node* fast = head;
+
+     while( fast != nullptr and fast -> next != nullptr)
+     {
+         slow = slow -> next;
+         fast = fast -> next -> next;
+
+         if( slow == fast)
+         {
+             return len ( fast, slow);
+         }
+     }
+     return 0;
+}
