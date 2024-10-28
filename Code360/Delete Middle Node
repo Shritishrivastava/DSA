@@ -1,0 +1,23 @@
+Node* deleteMiddle(Node* head){
+    
+    if ( head == nullptr or head -> next == nullptr)
+    {
+        return nullptr;
+    }
+
+    Node* slow = head;
+    Node* fast = head;
+
+    fast = fast -> next -> next;
+
+    while( fast != nullptr and fast -> next != nullptr)
+    {
+        slow = slow -> next;
+        fast = fast -> next -> next;
+    }
+
+    slow -> next = slow -> next -> next;
+
+    return head;
+
+}
