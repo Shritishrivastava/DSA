@@ -1,0 +1,32 @@
+pair<int, int> getFloorAndCeil(vector<int> &a, int n, int x) {
+
+    int floor = -1;
+    int ceiling = -1;
+
+    
+    int left = 0, right = n - 1;
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (a[mid] <= x) {
+            floor = a[mid];
+            left = mid + 1; 
+        } else {
+            right = mid - 1; 
+        }
+    }
+
+    
+    left = 0;
+    right = n - 1;
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (a[mid] >= x) {
+            ceiling = a[mid]; 
+            right = mid - 1; 
+        } else {
+            left = mid + 1; 
+        }
+    }
+
+    return {floor, ceiling};
+}
