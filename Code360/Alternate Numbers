@@ -1,0 +1,15 @@
+vector<int> alternateNumbers(vector<int>&a) {
+    vector<int>ans(a.size(),0);
+    int pos_idx=0;
+    int neg_idx=1;
+    for(int i=0;i<a.size();i++){
+        if(a[i]<0){
+            ans[neg_idx]=a[i];
+            neg_idx += +2;
+        }else{
+            ans[pos_idx]=a[i];
+            pos_idx += +2;
+        }
+    }
+    return ans;
+}
