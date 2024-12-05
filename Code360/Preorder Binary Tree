@@ -1,0 +1,13 @@
+void  preOrderhelper(TreeNode<int> * root, vector<int>&res){
+    if(root == nullptr){
+        return;
+    }
+    res.push_back(root->data);
+    preOrderhelper(root->left, res);
+    preOrderhelper(root->right, res);
+}
+vector<int> preOrder(TreeNode<int> * root){
+    vector<int>res;
+    preOrderhelper(root, res);
+    return res;
+}
