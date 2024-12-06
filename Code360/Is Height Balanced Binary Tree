@@ -1,0 +1,23 @@
+int getheight(TreeNode<int>* root){
+    if(root == nullptr){
+        return 0;
+    }
+    int leftheight = getheight(root->left);
+    int rightheight = getheight(root->right);
+
+    if(leftheight == -1 || rightheight == -1){
+        return -1;
+    }
+    if(abs(leftheight - rightheight) > 1){
+        return -1;
+    }
+    return max(leftheight, rightheight) + 1;
+}
+bool isBalancedBT(TreeNode<int>* root){
+    int height = getheight(root);
+    if(height == -1){
+        return false;
+    }else{
+        return true;
+    }
+}
