@@ -1,0 +1,15 @@
+int height(TreeNode<int> *root, int& diameter){
+    if(root == nullptr){
+        return 0;
+    }
+    int leftheight = height(root->left, diameter);
+    int rightheight = height(root->right, diameter);
+
+    diameter = max(leftheight + rightheight, diameter);
+    return max(leftheight , rightheight) + 1;
+}
+int diameterOfBinaryTree(TreeNode<int> *root){
+	int diameter = 0;
+    height(root, diameter);
+    return diameter;
+}
