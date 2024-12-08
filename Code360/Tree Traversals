@@ -1,0 +1,39 @@
+void postorder(TreeNode* root, vector<int>&result){
+    if(root == nullptr){
+        return;
+    }
+    postorder(root->left, result);
+    postorder(root->right, result);
+    result.push_back(root->data);
+}
+void preorder(TreeNode* root, vector<int>&result){
+    if(root == nullptr){
+        return;
+    }
+    result.push_back(root->data);
+    preorder(root->left, result);
+    preorder(root->right, result);
+}
+void inorder(TreeNode* root, vector<int>&result){
+    if(root == nullptr){
+        return;
+    }
+    inorder(root->left, result);
+     (root->data);
+    inorder(root->right, result);
+}
+vector<vector<int>> getTreeTraversal(TreeNode *root) {
+    vector<vector<int>> result;
+    vector<int> inorderTraversal, preorderTraversal, postorderTraversal;
+
+    inorder(root, inorderTraversal);     
+    preorder(root, preorderTraversal);   
+    postorder(root, postorderTraversal); 
+
+   
+    result.push_back(inorderTraversal);
+    result.push_back(preorderTraversal);
+    result.push_back(postorderTraversal);
+
+    return result;
+}
