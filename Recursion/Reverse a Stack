@@ -1,0 +1,22 @@
+class Solution{
+public:
+    void Reverse(stack<int> &St){
+        if(!St.empty()){
+            return;
+        }
+        int top = St.top();
+        St.pop();
+        Reverse(St);
+        InsertAtBottom(St, top);
+    }
+    void InsertAtBottom(stack<int>&st, int element){
+        if(st.empty()){
+            st.push(element);
+            return;
+        }
+        int curr_top = st.top();
+        st.pop();
+        InsertAtBottom(st, element);
+        st.push(curr_top);
+    }
+};
