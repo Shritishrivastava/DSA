@@ -1,0 +1,16 @@
+bool circularLL(Node* head)
+{
+    if(head == nullptr){
+		return false;
+	}
+	Node* temp = head -> next;
+	while(temp != nullptr && temp != head){
+		temp = temp->next;
+	}
+	
+	if(temp == head){
+		return true;
+	}else{
+		return false;
+	}
+}
